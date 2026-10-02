@@ -245,16 +245,16 @@ function includes(s, p){
   });
 }
 function forLine(s){
-  const t=tokens(s), g=t.find(x=>x.toLowerCase().startsWith("group:"));
-  if (g){ const n=g.slice(6).trim(); return /snowboard/i.test(n) ? "Snowboard group" : `${n}'s group`; }
+  const t=tokens(s), gs=t.filter(x=>x.toLowerCase().startsWith("group:"));
+  if (gs.length) return gs.map(g=>{ const n=g.slice(6).trim(); return /snowboard/i.test(n) ? "Snowboard group" : `${n}'s group`; }).join(" + ");
   const ks=t.map(x=>x.toLowerCase()); const parts=[];
   if (ks.includes("everyone")) parts.push("Everyone"); else { if (ks.includes("riders")) parts.push("All riders"); if (ks.includes("coaches")) parts.push("Coaches"); }
   if (ks.some(k=>k.startsWith("youth"))) parts.push("Malung youth trainers");
   return parts.join(" + ");
 }
 function rosterOf(s){
-  const t=tokens(s), g=t.find(x=>x.toLowerCase().startsWith("group:"));
-  if (g){ const G=GROUPS[g.slice(6).trim()]; return G?G.riders:[]; }
+  const t=tokens(s), gs=t.filter(x=>x.toLowerCase().startsWith("group:"));
+  if (gs.length) return gs.flatMap(g=>{ const G=GROUPS[g.slice(6).trim()]; return G?G.riders:[]; });
   return PEOPLE.filter(p=>p.role==="rider" && t.includes(p.name));
 }
 
