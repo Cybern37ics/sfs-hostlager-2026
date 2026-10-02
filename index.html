@@ -4,63 +4,60 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Höstläger Kläppen 2026</title>
+<meta name="theme-color" content="#000000">
+<title>Höstläger Kläppen 2026 · SFS</title>
+<link rel="icon" href="logo.png">
 <style>
 :root{
-  --bg:#f6f7f9; --card:#ffffff; --ink:#15181d; --muted:#5d6672; --line:#e3e6ea;
-  --accent:#1f6feb; --accent-ink:#ffffff; --soft:#eef3fd;
-  --svart:#20242a; --rodplus:#c2410c; --rod:#dc2626; --bla:#2563eb; --sb:#7c3aed;
-  --klappen:#0e7490; --warn:#9a6700; --warn-bg:#fff8e1;
-}
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#0f1216; --card:#171b21; --ink:#e8ebef; --muted:#9aa4b1; --line:#2a3039;
-    --accent:#4c8dff; --accent-ink:#0b0d10; --soft:#1a2433;
-    --svart:#c9ced6; --rodplus:#fb923c; --rod:#f87171; --bla:#60a5fa; --sb:#a78bfa;
-    --klappen:#22d3ee; --warn:#e3b341; --warn-bg:#2a2410;
-  }
+  --bg:#000000; --card:#121212; --ink:#ffffff; --muted:#b3b3b3; --line:#2b2b2b;
+  --red:#ff0000; --gold:#f2b233; --blue:#4c8dff; --green:#3ddc84;
+  --svart:#e6e6e6; --rodplus:#ff7a3d; --rod:#ff4d4d; --bla:#5aa2ff; --sb:#b48cff;
+  --display: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 *{box-sizing:border-box}
 html,body{margin:0}
-body{background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:16px/1.45 var(--display);-webkit-text-size-adjust:100%}
 .wrap{max-width:720px;margin:0 auto;padding:16px 16px 48px}
-header h1{font-size:1.45rem;margin:4px 0 2px}
-header p{margin:0;color:var(--muted);font-size:.95rem}
+header{display:flex;align-items:center;gap:12px;padding-bottom:12px;border-bottom:3px solid var(--red)}
+header img{width:56px;height:56px;object-fit:contain;flex:none}
+header h1{font-size:1.4rem;line-height:1.15;margin:0;font-weight:900;letter-spacing:-.01em;text-transform:uppercase}
+header p{margin:2px 0 0;color:var(--muted);font-size:.9rem}
 .tabs{display:flex;gap:6px;margin:16px 0 12px}
-.tab{flex:1;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:10px 8px;border-radius:10px;font-size:.95rem;cursor:pointer}
-.tab[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
-.search{position:relative}
-.search input{width:100%;font-size:1.05rem;padding:13px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
-.search input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.tab{flex:1;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:11px 8px;border-radius:10px;font:700 .95rem var(--display);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.search input{width:100%;font:1.05rem var(--display);padding:13px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.search input:focus{outline:2px solid var(--red);outline-offset:1px}
 .list{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
-.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 12px;font-size:.92rem;cursor:pointer;white-space:nowrap}
-.chip:hover{border-color:var(--accent)}
-.sect{margin:14px 0 4px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.who{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}
-.who h2{margin:0 0 4px;font-size:1.25rem}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 13px;font:.95rem var(--display);cursor:pointer;white-space:nowrap}
+.chip:hover,.chip:focus{border-color:var(--red)}
+.chip .dot{margin-left:4px}
+.sect{margin:16px 0 4px;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.back{display:inline-block;margin:14px 0 0;border:0;background:transparent;color:var(--ink);font:700 1rem var(--display);padding:6px 0;cursor:pointer}
+.back:hover{color:var(--red)}
+.who{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--red);border-radius:14px;padding:14px;margin:10px 0}
+.who h2{margin:0 0 4px;font-size:1.35rem;font-weight:900}
 .who .meta{color:var(--muted);font-size:.95rem}
-.who button{margin-top:10px}
-.back{display:inline-block;margin:14px 0 0;border:0;background:transparent;color:var(--accent);font-size:1rem;font-weight:600;padding:6px 0;cursor:pointer}
-.day{margin:22px 0 8px;font-size:1.1rem;font-weight:700;position:sticky;top:0;background:var(--bg);padding:6px 0;z-index:1}
-.ev{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:12px;padding:12px 14px;margin:8px 0}
-.ev.klappen{border-left-color:var(--klappen)}
-.ev.common{border-left-color:var(--muted)}
-.ev.mine{border-left-color:var(--accent)}
-.ev .t{font-weight:700;font-variant-numeric:tabular-nums}
-.ev .meet{display:inline-block;margin-left:6px;font-size:.85rem;color:var(--warn);background:var(--warn-bg);border-radius:6px;padding:1px 7px;font-weight:600}
+.day{margin:24px 0 8px;font-size:1.05rem;font-weight:900;text-transform:uppercase;letter-spacing:.03em;position:sticky;top:0;background:var(--bg);padding:8px 0;z-index:1;border-bottom:1px solid var(--line)}
+.ev{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--ink);border-radius:12px;padding:12px 14px;margin:8px 0}
+.ev.common{border-left-color:#555}
+.ev.klappen{border-left-color:var(--blue)}
+.ev .t{font-weight:900;font-variant-numeric:tabular-nums}
+.ev .meet{display:inline-block;margin-left:6px;font-size:.82rem;color:#000;background:var(--gold);border-radius:6px;padding:1px 7px;font-weight:700}
 .ev h3{margin:3px 0 2px;font-size:1.02rem}
 .ev .place{color:var(--muted);font-size:.92rem}
 .ev .d{margin-top:6px;font-size:.93rem}
-.ev .tag{display:inline-block;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--klappen);border:1px solid currentColor;border-radius:5px;padding:0 5px;margin-left:6px;vertical-align:1px}
-.ev .tag.opt{color:var(--muted)}
+.ev .y{margin-top:6px;font-size:.93rem;color:var(--green)}
+.ev .for{margin-top:6px;font-size:.85rem;color:var(--muted)}
+.tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:1px solid currentColor;border-radius:5px;padding:0 5px;margin-left:6px;vertical-align:2px}
+.tag.k{color:var(--blue)} .tag.o{color:var(--muted)}
 details{margin-top:6px}
-summary{cursor:pointer;color:var(--accent);font-size:.92rem}
+summary{cursor:pointer;color:var(--ink);font-size:.9rem;text-decoration:underline;text-underline-offset:3px}
 .roster{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
-.roster span{font-size:.86rem;background:var(--soft);border-radius:6px;padding:2px 7px}
-.lvl{font-weight:700}
-.lvl.svart{color:var(--svart)} .lvl.rodplus{color:var(--rodplus)} .lvl.rod{color:var(--rod)} .lvl.bla{color:var(--bla)} .lvl.sb{color:var(--sb)}
-.note{background:var(--warn-bg);color:var(--ink);border-radius:10px;padding:10px 12px;font-size:.92rem;margin:10px 0}
-footer{margin-top:28px;color:var(--muted);font-size:.85rem}
+.roster span{font-size:.86rem;background:#1f1f1f;border-radius:6px;padding:2px 7px}
+.roster span.me{outline:2px solid var(--red)}
+.lv-Svart{color:var(--svart)} .lv-Rödplus{color:var(--rodplus)} .lv-Röd{color:var(--rod)} .lv-Blå{color:var(--bla)} .lv-Snowboard{color:var(--sb)}
+.note{background:#1a1406;border:1px solid #4a3a10;color:var(--ink);border-radius:10px;padding:10px 12px;font-size:.92rem;margin:10px 0}
+footer{margin-top:28px;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line);padding-top:12px}
 .empty{color:var(--muted);text-align:center;padding:24px 0}
 [hidden]{display:none!important}
 </style>
@@ -68,8 +65,11 @@ footer{margin-top:28px;color:var(--muted);font-size:.85rem}
 <body>
 <div class="wrap">
   <header>
-    <h1>Höstläger Kläppen 2026</h1>
-    <p>Stockholm Freeski &amp; Snowboard Club · Fri 2 – Sun 4 October</p>
+    <img src="logo.png" alt="SFS">
+    <div>
+      <h1>Höstläger Kläppen 2026</h1>
+      <p>Stockholm Freeski &amp; Snowboard Club · Fri 2 – Sun 4 October</p>
+    </div>
   </header>
 
   <div class="tabs" role="tablist">
@@ -78,219 +78,270 @@ footer{margin-top:28px;color:var(--muted);font-size:.85rem}
   </div>
 
   <section id="view-me">
-    <div class="search">
-      <input id="q" type="search" placeholder="Type your name…" autocomplete="off" aria-label="Find your name">
-    </div>
+    <div class="search"><input id="q" type="search" placeholder="Type your name…" autocomplete="off" aria-label="Find your name"></div>
     <div id="picker"></div>
     <div id="person"></div>
   </section>
-
   <section id="view-all" hidden></section>
 
   <footer>
-    Times are in Swedish time. Lifts in the Höstpark run 10:00–16:00. Questions: ask your group's coach.<br>
-    Last updated <span id="updated"></span>.
+    Times are Swedish time. Höstpark lifts run 10:00–16:00. Questions: ask your group's coach.<br>
+    <span id="status"></span>
   </footer>
 </div>
 
+<!-- Fallback snapshot of the sheet, used only if the live sheet can't be reached. -->
+<script type="text/csv" id="snapshot">
+PEOPLE,This tab feeds the weekend page https://cybern37ics.github.io/sfs-hostlager-2026/ — edits show there within ~5 min. First names only (initial if two share a name).,,,,,,,,,
+Name,Role,Discipline,Level,Group,Days (youth trainers: Sat / Sun / Sat+Sun),,,,,
+Bo,rider,ski,Svart,Svart,,,,,,
+Carl-Alfred,rider,ski,Svart,Svart,,,,,,
+Buster,rider,ski,Svart,Svart,,,,,,
+Sam,rider,ski,Svart,Svart,,,,,,
+Anton,rider,ski,Svart,Svart,,,,,,
+Liam,rider,ski,Svart,Svart,,,,,,
+Melvin,rider,ski,Svart,Röd+,,,,,,
+Hampus,rider,ski,Svart,Röd+,,,,,,
+Aksel,rider,ski,Svart,Röd+,,,,,,
+Alexander,rider,ski,Röd+,Röd+,,,,,,
+Emil H,rider,ski,Röd+,Röd+,,,,,,
+Erik,rider,ski,Röd+,Röd+,,,,,,
+Bengt,rider,ski,Röd+,Röd+,,,,,,
+Ture,rider,ski,Röd+,Röd+,,,,,,
+Kim,rider,ski,Blå,Röd/Blå,,,,,,
+Nikki,rider,ski,Blå,Röd/Blå,,,,,,
+Albin T,rider,ski,Röd,Röd/Blå,,,,,,
+Oscar,rider,ski,Röd,Röd/Blå,,,,,,
+Carl,rider,ski,Röd,Röd/Blå,,,,,,
+Phlip,rider,ski,Röd,Röd,,,,,,
+Victor,rider,ski,Röd,Röd,,,,,,
+Petter,rider,ski,Röd,Röd,,,,,,
+Ruben,rider,ski,Röd,Röd,,,,,,
+Robin,rider,snowboard,Snowboard,Snowboard,,,,,,
+Mille,rider,snowboard,Snowboard,Snowboard,,,,,,
+Olle,rider,snowboard,Snowboard,Snowboard,,,,,,
+Joni,rider,snowboard,Snowboard,Snowboard,,,,,,
+Vera,rider,snowboard,Snowboard,Snowboard,,,,,,
+Emil D,rider,snowboard,Snowboard,Snowboard,,,,,,
+Albin G,rider,snowboard,Snowboard,Snowboard,,,,,,
+Eda,rider,snowboard,Snowboard,Snowboard,,,,,,
+Julian,rider,snowboard,Snowboard,Snowboard,,,,,,
+John John,rider,snowboard,Snowboard,Snowboard,,,,,,
+Jason,coach,ski,,Röd+,,,,,,
+Albert,coach,ski,,Svart,,,,,,
+John,coach,ski,,Röd/Blå,,,,,,
+Daniel,coach,ski,,Röd,,,,,,
+Lanlan,coach,snowboard,,Snowboard,,,,,,
+Göran,coach,snowboard,,Snowboard,,,,,,
+Arvid,coach,snowboard,,Snowboard,,,,,,
+Luna,youth,ski,,,,,,,,
+Elina,youth,ski,,,,,,,,
+Loke,youth,ski,,,,,,,,
+Filip,youth,ski,,,,,,,,
+Rasmus,youth,ski,,,,,,,,
+Charlie,youth,ski,,,,,,,,
+,,,,,,,,,,
+SESSIONS,"Who: names separated by commas, or shortcuts — everyone (riders + coaches), riders, coaches, youth, youth-sat, youth-sun, group:Svart / group:Röd+ / group:Röd/Blå / group:Röd / group:Snowboard. Type: camp / common / klappen. Youth note shows only to youth trainers.",,,,,,,,,
+Day,Start,End,Meet,Title,Place,Type,Optional,Who,Details,Youth note
+Fri,12:00,,,Check-in at Hotell Kurbits opens,Hotell Kurbits,common,,everyone,One contact person per room gets the check-in info. Bed linen and towels are in the rooms (make your own bed). Rooms have a small kitchen. Breakfast and departure cleaning are included.,
+Fri,15:45,17:45,15:00,Coaches' bag session (bag 15:45),Kläppen Arena · airbag,camp,,coaches,For the coaches who are up early.,
+Fri,19:00,21:00,,Coaches' meeting + dinner,Place set in the coaches' chat,camp,,coaches,Season input and a run-through of the weekend.,
+Fri,21:00,23:00,,Kläppen Video Awards,Kläppen,klappen,yes,coaches,Coaches go together after dinner.,
+Sat,08:30,09:00,,Gathering + group photo,"Arena area — below the arena, by the parking",camp,,everyone,,
+Sat,09:00,09:30,,Joint warm-up,Arena area,camp,,everyone,,
+Sat,10:00,11:00,09:30,Höstpark — Svart group,Höstpark · meet at the bottom of the Höstpark lift,camp,,group:Svart,Lifts open at 10:00. Malung youth trainers split the group into packs of 3–4 that ride together and drop in staggered.,
+Sat,10:00,11:00,09:30,Höstpark — Röd+ group,Höstpark · meet at the bottom of the Höstpark lift,camp,,group:Röd+,Lifts open at 10:00. Malung youth trainers split the group into packs of 3–4 that ride together and drop in staggered.,
+Sat,10:00,11:00,09:30,Höstpark — Röd/Blå group,Höstpark · meet at the bottom of the Höstpark lift,camp,,group:Röd/Blå,Lifts open at 10:00. Malung youth trainers split the group into packs of 3–4 that ride together and drop in staggered.,
+Sat,10:00,11:00,09:30,Höstpark — Röd group,Höstpark · meet at the bottom of the Höstpark lift,camp,,group:Röd,Lifts open at 10:00. Malung youth trainers split the group into packs of 3–4 that ride together and drop in staggered.,
+Sat,10:00,11:00,09:30,Höstpark — Snowboard group,Höstpark · meet at the bottom of the Höstpark lift,camp,,group:Snowboard,Lifts open at 10:00.,
+Sat,10:00,13:30,,Park opening — ride with your pack,Meet at the bottom of the Höstpark lift,camp,,youth-sat,"You'll get a pack of 3–4 kids inside one coach's group, assigned when we meet. Help them feel at home in the park and build confidence.",After 13:30 you're free — ride the rail jam and inspire them.
+Sat,11:30,12:30,,Lunch,Bring your own · Restaurang Halster is open for lunch,common,,"everyone, youth-sat",Parents help make sure every rider eats.,Lunch is on the club — join us.
+Sat,13:00,15:00,12:30,Höstpark — all groups,Höstpark,camp,,everyone,,
+Sat,13:30,16:30,,Opening Showdown rail jam,Höstpark,klappen,yes,"everyone, youth","For anyone who wants to ride. Training 13:30–14:30 · rider meeting 14:30 · jam 14:45–15:45 · prizes 16:00. No sign-up needed. If you're in the 15:45 bag session, you meet at the bag at 15:00.",Ride it and inspire the kids!
+Sat,15:00,16:00,,Snack break,,common,,riders,"Parents help remind everyone to eat something (fruit, bars).",
+Sat,15:45,17:45,15:00,Airbag (bag 15:45),Kläppen Arena · airbag,camp,,"Kim, Albin T, Oscar, Bengt, Carl, Erik, Phlip, Victor, Petter, Ruben, Alexander, Ture, Emil H, Robin, Emil D, Albin G, John John, Bo, Buster, Carl-Alfred, Hampus, Aksel, Melvin, Anton, Sam, Liam, Albert, Arvid, Daniel, John, Jason, Göran, Lanlan","Coaches: Albert, Arvid, Daniel, John, Jason + Göran or Lanlan. Meet 45 minutes early. It's very wet — bring extra gloves and clothes.",
+Sat,15:00,16:00,,Höstpark — keep riding (no bag today),Höstpark · lifts close 16:00,camp,,"Nikki, Olle, Joni, Vera, Eda, Mille, Julian, Göran, Lanlan",With Göran or Lanlan.,
+Sat,16:15,16:30,,Autograph signing with the national team,Bottom of the Höstpark,klappen,yes,"everyone, youth",Right after the rail jam prizes. Overlaps the bag session.,
+Sat,18:30,19:00,,Ski federation: news for the season,"Värmestugan, next to the hotel",common,,everyone,,
+Sat,19:00,22:00,,Pizza + film night,Värmestugan,common,,everyone,Pizzas were pre-ordered in the camp group.,
+Sat,22:00,,,Bedtime (quiet by 23:00),Hotell Kurbits,common,,riders,,
+Sun,09:00,11:00,08:15,Airbag (bag 09:00),Kläppen Arena · airbag,camp,,"Kim, Bengt, Erik, Phlip, Victor, Petter, Ruben, Alexander, Emil H, Robin, Olle, Joni, Vera, Emil D, Albin G, Eda, Julian, John John, Bo, Buster, Carl-Alfred, Hampus, Melvin, Sam, Liam, Albert, Arvid, Daniel, Göran, Jason, Lanlan","Coaches: Albert, Arvid, Daniel, Göran, Jason, Lanlan. Meet 45 minutes early.",
+Sun,10:00,11:00,09:30,Höstpark (no bag this morning),Höstpark · meet at the bottom of the Höstpark lift,camp,,"Nikki, Albin T, Oscar, Carl, Ture, Mille, Aksel, Anton, John, Lanlan",With John (and Lanlan). Lifts open at 10:00.,
+Sun,10:00,,,Check-out from Hotell Kurbits,Hotell Kurbits,common,,everyone,By 10:00. If you're in the morning bag session you can keep your room until 12:00.,
+Sun,11:30,12:30,,Lunch,Bring your own · Restaurang Halster,common,,"everyone, youth-sun",,Lunch is on the club — join us.
+Sun,13:00,13:30,,Early send-off (for those leaving early),,common,yes,everyone,,
+Sun,13:30,15:30,13:00,Höstpark — all groups,Höstpark,camp,,everyone,,
+Sun,13:00,15:00,,Trick help,Meet at the bottom of the Höstpark lift,camp,,youth-sun,Ride with a pack and help the kids work on specific tricks.,
+Sun,15:45,16:00,,Closing,,common,,everyone,After this you can stay on your own responsibility.,
+</script>
+
 <script>
-const UPDATED = "2 Oct 2026, 04:00";
+// Live data: the "Höstläger app" tab of the camp sheet, published to the web as CSV.
+const SHEET_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSUz4p82kOloUyYgmI979we7-jrmMwVZtIzzddSnjRBGb1wuD2Tm6W-aFBgHRaqWgyELeyob6Vki4nr/pub?gid=1248964458&single=true&output=csv";
 
-// ---------- People ----------
-const GROUPS = {
-  albert: {label:"Svart", lvl:"svart", emoji:"⚫", coaches:["Albert"]},
-  jason:  {label:"Röd+",  lvl:"rodplus", emoji:"🔴+", coaches:["Jason"]},
-  john:   {label:"Röd / Blå", lvl:"rod", emoji:"🔵", coaches:["John"]},
-  daniel: {label:"Röd",   lvl:"rod", emoji:"🔴", coaches:["Daniel"]},
-  sb:     {label:"Snowboard", lvl:"sb", emoji:"🏂", coaches:["Lanlan","Göran","Arvid"]},
-};
-// riders: [display name, level key, group]
-const RIDERS = [
-  ["Bo E.","svart","albert"],["Carl-Alfred H.","svart","albert"],["Buster W.","svart","albert"],
-  ["Sam N.","svart","albert"],["Anton J.","svart","albert"],["Liam R.","svart","albert"],
-  ["Melvin S.","svart","jason"],["Hampus Ö.","svart","jason"],["Aksel R.","svart","jason"],
-  ["Alexander B.","rodplus","jason"],["Emil H.","rodplus","jason"],["Erik H.","rodplus","jason"],
-  ["Bengt A.","rodplus","jason"],["Ture F.","rodplus","jason"],
-  ["Kim E.","bla","john"],["Nikki H.L.","bla","john"],["Albin T.","rod","john"],["Oscar S.","rod","john"],["Carl H.","rod","john"],
-  ["Phlip H.","rod","daniel"],["Victor A.","rod","daniel"],["Petter H.","rod","daniel"],["Ruben T.","rod","daniel"],
-  ["Robin Z.","sb","sb"],["Mille Z.","sb","sb"],["Olle M.","sb","sb"],["Joni S.","sb","sb"],["Vera M.","sb","sb"],
-  ["Emil D.","sb","sb"],["Albin G.","sb","sb"],["Eda T.","sb","sb"],["Julian W.","sb","sb"],["John John A.","sb","sb"],
-];
-const COACHES = ["Jason","Albert","John","Daniel","Lanlan","Göran","Arvid"];
-const YOUTH = ["Luna","Elina","Loke","Filip","Rasmus","Charlie"];
-const LVLNAME = {svart:"Svart ⚫ (ski)", rodplus:"Röd+ 🔴+ (ski)", rod:"Röd 🔴 (ski)", bla:"Blå 🔵 (ski)", sb:"Snowboard 🏂"};
-
-const PEOPLE = [];
-RIDERS.forEach(([n,l,g])=>PEOPLE.push({id:slug(n),name:n,role:"rider",lvl:l,group:g}));
-COACHES.forEach(n=>PEOPLE.push({id:slug(n),name:n,role:"coach",group:Object.keys(GROUPS).find(k=>GROUPS[k].coaches.includes(n))}));
-YOUTH.forEach(n=>PEOPLE.push({id:slug(n),name:n,role:"youth"}));
-function slug(s){return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"")}
-const byName = Object.fromEntries(PEOPLE.map(p=>[p.name,p]));
-const ridersIn = g => PEOPLE.filter(p=>p.role==="rider"&&p.group===g);
-
-// ---------- Sessions ----------
-const SAT_BAG = ["Kim E.","Albin T.","Oscar S.","Bengt A.","Carl H.","Erik H.","Phlip H.","Victor A.","Petter H.","Ruben T.","Alexander B.","Ture F.","Emil H.","Robin Z.","Emil D.","Albin G.","John John A.","Bo E.","Buster W.","Carl-Alfred H.","Hampus Ö.","Aksel R.","Melvin S.","Anton J.","Sam N.","Liam R."];
-const SAT_PARK_ONLY = ["Nikki H.L.","Olle M.","Joni S.","Vera M.","Eda T.","Mille Z.","Julian W."];
-const SUN_BAG = ["Kim E.","Bengt A.","Erik H.","Phlip H.","Victor A.","Petter H.","Ruben T.","Alexander B.","Emil H.","Robin Z.","Olle M.","Joni S.","Vera M.","Emil D.","Albin G.","Eda T.","Julian W.","John John A.","Bo E.","Buster W.","Carl-Alfred H.","Hampus Ö.","Melvin S.","Sam N.","Liam R."];
-const SUN_PARK_ONLY = ["Nikki H.L.","Albin T.","Oscar S.","Carl H.","Ture F.","Mille Z.","Aksel R.","Anton J."];
-
-const ALL_RIDERS = PEOPLE.filter(p=>p.role==="rider").map(p=>p.name);
-const ALL = [...ALL_RIDERS, ...COACHES];
-const STAYING = "everyone staying at Kurbits";
-
-// kind: "camp" (club session), "common" (meals/info), "klappen" (Kläppen's own program)
-const EVENTS = [
-  // Friday
-  {day:"fri", start:"12:00", title:"Check-in at Hotell Kurbits opens", place:"Hotell Kurbits", kind:"common", who:ALL,
-   d:"One contact person per room gets the check-in info. Bed linen and towels are in the rooms (make your own bed). Rooms have a small kitchen. Breakfast and departure cleaning are included."},
-  {day:"fri", start:"15:45", end:"17:45", meet:"15:00", title:"Coaches' bag session (bag 15:45)", place:"Kläppen Arena · airbag", kind:"camp", who:COACHES,
-   d:"For the coaches who are up early."},
-  {day:"fri", start:"19:00", end:"21:00", title:"Coaches' meeting + dinner", place:"Place set in the coaches' chat", kind:"camp", who:COACHES,
-   d:"Season input and a run-through of the weekend."},
-  {day:"fri", start:"21:00", end:"23:00", title:"Kläppen Video Awards", place:"Kläppen", kind:"klappen", who:COACHES, optional:true,
-   d:"Coaches go together after dinner."},
-
-  // Saturday
-  {day:"sat", start:"08:30", end:"09:00", title:"Gathering + group photo", place:"Arena area — below the arena, by the parking", kind:"camp", who:ALL},
-  {day:"sat", start:"09:00", end:"09:30", title:"Joint warm-up", place:"Arena area", kind:"camp", who:ALL},
-  ...Object.keys(GROUPS).map(g=>({day:"sat", start:"10:00", end:"11:00", meet:"09:30", title:`Höstpark — ${GROUPS[g].label} group`, place:"Höstpark · meet at the bottom of the Höstpark lift", kind:"camp", group:g,
-     who:[...ridersIn(g).map(p=>p.name), ...GROUPS[g].coaches],
-     d: g==="sb" ? "Lifts open at 10:00." : "Lifts open at 10:00. The Malung youth trainers split the groups into packs of 3–4 that ride together and drop in staggered."})),
-  {day:"sat", start:"10:00", end:"13:30", meet:"10:00", title:"Park opening — ride with your pack", place:"Meet at the bottom of the Höstpark lift", kind:"camp", who:YOUTH,
-   d:"If you picked Saturday in the poll. You'll get a pack of 3–4 kids inside one coach's group, assigned when we meet. Help them feel at home in the park and build confidence. Lunch is on the club. After 13:30 you're free — ride the rail jam and inspire them."},
-  {day:"sat", start:"11:30", end:"12:30", title:"Lunch", place:"Bring your own · Restaurang Halster is open for lunch", kind:"common", who:[...ALL, ...YOUTH],
-   d:"Parents help make sure every rider eats. Malung youth trainers: lunch is on the club."},
-  {day:"sat", start:"13:00", end:"15:00", meet:"12:30", title:"Höstpark — all groups", place:"Höstpark", kind:"camp", who:ALL},
-  {day:"sat", start:"13:30", end:"16:30", title:"Opening Showdown rail jam", place:"Höstpark", kind:"klappen", optional:true, who:[...ALL, ...YOUTH],
-   d:"For anyone who wants to ride. Training 13:30–14:30 · rider meeting 14:30 · jam 14:45–15:45 · prizes 16:00. No sign-up needed. If you're in the 15:45 bag session, you meet at the bag at 15:00."},
-  {day:"sat", start:"15:00", end:"16:00", title:"Snack break", place:"", kind:"common", who:ALL_RIDERS,
-   d:"Parents help remind everyone to eat something (fruit, bars)."},
-  {day:"sat", start:"15:45", end:"17:45", meet:"15:00", title:"Airbag (bag 15:45)", place:"Kläppen Arena · airbag", kind:"camp", who:[...SAT_BAG, "Albert","Arvid","Daniel","John","Jason","Göran","Lanlan"],
-   d:"Coaches: Albert, Arvid, Daniel, John, Jason + Göran or Lanlan. Meet 45 minutes early. It's very wet — bring extra gloves and clothes.", roster:SAT_BAG},
-  {day:"sat", start:"15:00", end:"16:00", title:"Höstpark — keep riding (no bag today)", place:"Höstpark · lifts close 16:00", kind:"camp", who:[...SAT_PARK_ONLY, "Göran","Lanlan"],
-   d:"With Göran or Lanlan.", roster:SAT_PARK_ONLY},
-  {day:"sat", start:"16:15", end:"16:30", title:"Autograph signing with the national team", place:"Bottom of the Höstpark", kind:"klappen", optional:true, who:[...ALL, ...YOUTH],
-   d:"Right after the rail jam prizes. Overlaps the bag session."},
-  {day:"sat", start:"18:30", end:"19:00", title:"Ski federation: news for the season", place:"Värmestugan, next to the hotel", kind:"common", who:ALL},
-  {day:"sat", start:"19:00", end:"22:00", title:"Pizza + film night", place:"Värmestugan", kind:"common", who:ALL,
-   d:"Pizzas were pre-ordered through Fredrik Axelsson."},
-  {day:"sat", start:"22:00", title:"Bedtime (quiet by 23:00)", place:"Hotell Kurbits", kind:"common", who:ALL_RIDERS},
-
-  // Sunday
-  {day:"sun", start:"09:00", end:"11:00", meet:"08:15", title:"Airbag (bag 09:00)", place:"Kläppen Arena · airbag", kind:"camp", who:[...SUN_BAG, "Albert","Arvid","Daniel","Göran","Jason","Lanlan"],
-   d:"Coaches: Albert, Arvid, Daniel, Göran, Jason, Lanlan. Meet 45 minutes early.", roster:SUN_BAG},
-  {day:"sun", start:"10:00", end:"11:00", meet:"09:30", title:"Höstpark (no bag this morning)", place:"Höstpark · meet at the bottom of the Höstpark lift", kind:"camp", who:[...SUN_PARK_ONLY, "John","Lanlan"],
-   d:"With John (and Lanlan). Lifts open at 10:00.", roster:SUN_PARK_ONLY},
-  {day:"sun", start:"10:00", title:"Check-out from Hotell Kurbits", place:"Hotell Kurbits", kind:"common", who:ALL,
-   d:"By 10:00. If you're in the morning bag session you can keep your room until 12:00."},
-  {day:"sun", start:"11:30", end:"12:30", title:"Lunch", place:"Bring your own · Restaurang Halster", kind:"common", who:[...ALL, ...YOUTH],
-   d:"Malung youth trainers: join us — lunch is on the club."},
-  {day:"sun", start:"13:00", end:"13:30", title:"Early send-off (for those leaving early)", place:"", kind:"common", who:ALL, optional:true},
-  {day:"sun", start:"13:30", end:"15:30", meet:"13:00", title:"Höstpark — all groups", place:"Höstpark", kind:"camp", who:ALL},
-  {day:"sun", start:"13:00", end:"15:00", meet:"13:00", title:"Trick help", place:"Meet at the bottom of the Höstpark lift", kind:"camp", who:YOUTH,
-   d:"If you picked Sunday in the poll. Ride with a pack and help the kids work on specific tricks."},
-  {day:"sun", start:"15:45", end:"16:00", title:"Closing", place:"", kind:"common", who:ALL,
-   d:"After this you can stay on your own responsibility."},
-];
-const DAYS = {fri:"Friday 2 October", sat:"Saturday 3 October", sun:"Sunday 4 October"};
-
-// ---------- Rendering ----------
 const $ = s=>document.querySelector(s);
-const esc = s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const mins = t=>{const [h,m]=t.split(":").map(Number);return h*60+m};
-const sortEv = (a,b)=>mins(a.meet&&a.kind==="camp"?a.meet:a.start)-mins(b.meet&&b.kind==="camp"?b.meet:b.start) || mins(a.start)-mins(b.start);
+const esc = s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const slug = s=>String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
+const mins = t=>{const m=/^(\d{1,2})[:.](\d{2})/.exec(t||"");return m?(+m[1])*60+(+m[2]):9999};
+const hhmm = t=>{const m=/^(\d{1,2})[:.](\d{2})/.exec(t||"");return m?m[1].padStart(2,"0")+":"+m[2]:(t||"")};
+const LV = {"Svart":"⚫","Röd+":"🔴+","Röd":"🔴","Blå":"🔵","Snowboard":"🏂"};
+const lvClass = l => "lv-"+String(l).replace("+","plus");
+const DAYS = [["fri","Friday 2 October"],["sat","Saturday 3 October"],["sun","Sunday 4 October"]];
 
-function evCard(e, me){
-  const time = e.end ? `${e.start}–${e.end}` : e.start;
-  const meet = e.meet && e.meet!==e.start ? `<span class="meet">meet ${e.meet}</span>` : "";
-  const tag = e.kind==="klappen" ? `<span class="tag">Kläppen</span>` : (e.optional?`<span class="tag opt">optional</span>`:"");
-  let extra = "";
-  if (e.group) extra += rosterBlock("Group", ridersIn(e.group).map(p=>p.name), me);
-  else if (e.roster) extra += rosterBlock(`Riders (${e.roster.length})`, e.roster, me);
-  const cls = e.kind==="klappen"?"klappen":(e.kind==="common"?"common":"mine");
-  return `<div class="ev ${cls}"><div class="t">${time}${meet}</div><h3>${esc(e.title)}${tag}</h3>${e.place?`<div class="place">${esc(e.place)}</div>`:""}${e.d?`<div class="d">${esc(e.d)}</div>`:""}${extra}</div>`;
+function parseCSV(text){
+  const rows=[]; let row=[], f="", q=false;
+  for (let i=0;i<text.length;i++){
+    const c=text[i];
+    if (q){ if (c==='"'){ if (text[i+1]==='"'){ f+='"'; i++; } else q=false; } else f+=c; }
+    else if (c==='"') q=true;
+    else if (c===','){ row.push(f); f=""; }
+    else if (c==='\n'){ row.push(f); rows.push(row); row=[]; f=""; }
+    else if (c!=='\r') f+=c;
+  }
+  if (f!==""||row.length){ row.push(f); rows.push(row); }
+  return rows.map(r=>r.map(x=>x.trim()));
 }
-function rosterBlock(label, names, me){
-  return `<details><summary>${esc(label)}</summary><div class="roster">${names.map(n=>{const p=byName[n];const lv=p&&p.lvl?` <span class="lvl ${p.lvl}">${p.lvl==="sb"?"🏂":GROUPEMOJI(p.lvl)}</span>`:"";return `<span${me&&me.name===n?' style="outline:2px solid var(--accent)"':""}>${esc(n)}${lv}</span>`}).join("")}</div></details>`;
+function table(rows, firstHeader){
+  const h = rows.findIndex(r=>r[0]===firstHeader);
+  if (h<0) return [];
+  const head = rows[h].map(x=>x.toLowerCase());
+  const out=[];
+  for (let i=h+1;i<rows.length;i++){
+    const r=rows[i];
+    if (!r[0] || /^[A-Z]{4,}$/.test(r[0])) break;
+    const o={}; head.forEach((k,j)=>o[k]=r[j]||""); out.push(o);
+  }
+  return out;
 }
-function GROUPEMOJI(l){return {svart:"⚫",rodplus:"🔴+",rod:"🔴",bla:"🔵"}[l]||""}
 
-function renderDays(list, me){
+let PEOPLE=[], SESSIONS=[], GROUPS={};
+function load(rows){
+  PEOPLE = table(rows,"Name").filter(p=>p.name).map(p=>{
+    const role=(p.role||"").toLowerCase();
+    const daysRaw = (p[Object.keys(p).find(k=>k.startsWith("days"))]||"").toLowerCase();
+    return {id:slug(p.name), name:p.name, role, disc:(p.discipline||"").toLowerCase(), lvl:p.level, group:p.group,
+      sat: role==="youth" ? (!daysRaw || daysRaw.includes("sat") || daysRaw.includes("lör")) : false,
+      sun: role==="youth" ? (!daysRaw || daysRaw.includes("sun") || daysRaw.includes("sön")) : false,
+      daysSet: !!daysRaw};
+  });
+  SESSIONS = table(rows,"Day").filter(s=>s.title).map(s=>({day:(s.day||"").slice(0,3).toLowerCase(), start:hhmm(s.start), end:hhmm(s.end), meet:hhmm(s.meet),
+    title:s.title, place:s.place, kind:(s.type||"camp").toLowerCase(), optional:/^(y|yes|ja|x)/i.test(s.optional||""), who:s.who||"", d:s.details, youth:s["youth note"]}));
+  GROUPS={};
+  PEOPLE.forEach(p=>{ if(!p.group) return; const g=GROUPS[p.group]||(GROUPS[p.group]={name:p.group,riders:[],coaches:[]}); (p.role==="coach"?g.coaches:p.role==="rider"?g.riders:[]).push(p); });
+}
+function tokens(s){ return s.who.split(",").map(t=>t.trim()).filter(Boolean); }
+function includes(s, p){
+  return tokens(s).some(t=>{
+    const k=t.toLowerCase();
+    if (k==="everyone") return p.role==="rider"||p.role==="coach";
+    if (k==="riders") return p.role==="rider";
+    if (k==="coaches") return p.role==="coach";
+    if (k==="youth") return p.role==="youth";
+    if (k==="youth-sat") return p.role==="youth" && p.sat;
+    if (k==="youth-sun") return p.role==="youth" && p.sun;
+    if (k.startsWith("group:")) return (p.role==="rider"||p.role==="coach") && p.group && p.group.toLowerCase()===t.slice(6).trim().toLowerCase();
+    return t===p.name;
+  });
+}
+function forLine(s){
+  const t=tokens(s), g=t.find(x=>x.toLowerCase().startsWith("group:"));
+  if (g) return `${g.slice(6).trim()} group`;
+  const ks=t.map(x=>x.toLowerCase()); const parts=[];
+  if (ks.includes("everyone")) parts.push("Everyone"); else { if (ks.includes("riders")) parts.push("All riders"); if (ks.includes("coaches")) parts.push("Coaches"); }
+  if (ks.some(k=>k.startsWith("youth"))) parts.push("Malung youth trainers");
+  return parts.join(" + ");
+}
+function rosterOf(s){
+  const t=tokens(s), g=t.find(x=>x.toLowerCase().startsWith("group:"));
+  if (g){ const G=GROUPS[g.slice(6).trim()]; return G?G.riders:[]; }
+  return PEOPLE.filter(p=>p.role==="rider" && t.includes(p.name));
+}
+
+function card(s, me){
+  const time = s.end ? `${s.start}–${s.end}` : s.start;
+  const meet = s.meet && s.meet!==s.start ? `<span class="meet">meet ${s.meet}</span>` : "";
+  const tag = s.kind==="klappen" ? `<span class="tag k">Kläppen</span>` : (s.optional?`<span class="tag o">optional</span>`:"");
+  const cls = s.kind==="klappen"?"klappen":(s.kind==="common"?"common":"");
+  let extra="";
+  if (me && me.role==="youth" && s.youth) extra += `<div class="y">${esc(s.youth)}</div>`;
+  if (me && me.role==="youth" && !me.daysSet && /youth-(sat|sun)/i.test(s.who)) extra += `<div class="for">If you picked this day in the poll.</div>`;
+  const ros = rosterOf(s);
+  const isAll = tokens(s).some(x=>["everyone","riders"].includes(x.toLowerCase()));
+  if (!me) { const f=forLine(s); if (f) extra += `<div class="for">For: ${esc(f)}</div>`; }
+  if (ros.length && !isAll) extra += `<details><summary>Riders (${ros.length})</summary><div class="roster">${ros.map(r=>`<span class="${me&&me.id===r.id?"me":""}">${esc(r.name)} <span class="${lvClass(r.lvl)}">${LV[r.lvl]||""}</span></span>`).join("")}</div></details>`;
+  return `<div class="ev ${cls}"><div class="t">${esc(time)}${meet}</div><h3>${esc(s.title)}${tag}</h3>${s.place?`<div class="place">${esc(s.place)}</div>`:""}${s.d?`<div class="d">${esc(s.d)}</div>`:""}${extra}</div>`;
+}
+function sortKey(s){ return s.kind==="camp" && s.meet ? Math.min(mins(s.meet),mins(s.start)) : mins(s.start); }
+function days(list, me){
   let html="";
-  for (const d of Object.keys(DAYS)){
-    const evs = list.filter(e=>e.day===d).sort(sortEv);
-    if(!evs.length) continue;
-    html += `<div class="day">${DAYS[d]}</div>` + evs.map(e=>evCard(e,me)).join("");
+  for (const [d,label] of DAYS){
+    const evs=list.filter(s=>s.day===d).sort((a,b)=>sortKey(a)-sortKey(b)||mins(a.start)-mins(b.start));
+    if (evs.length) html += `<div class="day">${label}</div>` + evs.map(s=>card(s,me)).join("");
   }
   return html || `<div class="empty">Nothing scheduled.</div>`;
 }
 
-function renderPicker(filter){
-  const f = slug(filter||"");
-  let last = ""; try{ last = localStorage.getItem("me")||""; }catch(e){}
-  const lp = !f && PEOPLE.find(p=>p.id===last);
-  const match = p => !f || slug(p.name).includes(f);
-  const sec = (label, arr) => { const m = arr.filter(match); return m.length ? `<div class="sect">${label}</div><div class="list">${m.map(p=>`<button class="chip" data-id="${p.id}">${esc(p.name)}</button>`).join("")}</div>` : ""; };
-  const riders = PEOPLE.filter(p=>p.role==="rider").sort((a,b)=>a.name.localeCompare(b.name,"sv"));
-  const html = (lp ? `<div class="sect">Last viewed</div><div class="list"><button class="chip" data-id="${lp.id}">${esc(lp.name)} →</button></div>` : "") + sec("Riders", riders) + sec("Coaches", PEOPLE.filter(p=>p.role==="coach")) + sec("Malung youth trainers", PEOPLE.filter(p=>p.role==="youth"));
-  $("#picker").innerHTML = html || `<div class="empty">No name matches “${esc(filter)}”.</div>`;
+function renderPicker(){
+  const f=slug($("#q").value||"");
+  const ok=p=>!f||slug(p.name).includes(f);
+  let last=""; try{ last=localStorage.getItem("me")||""; }catch(e){}
+  const lp=!f&&PEOPLE.find(p=>p.id===last);
+  const chip=p=>`<button class="chip" data-id="${p.id}">${esc(p.name)}${p.role==="rider"?` <span class="dot ${lvClass(p.lvl)}">${LV[p.lvl]||""}</span>`:""}</button>`;
+  const sec=(label,arr)=>{const m=arr.filter(ok);return m.length?`<div class="sect">${label}</div><div class="list">${m.map(chip).join("")}</div>`:""};
+  const riders=PEOPLE.filter(p=>p.role==="rider").sort((a,b)=>a.name.localeCompare(b.name,"sv"));
+  const html=(lp?`<div class="sect">Last viewed</div><div class="list"><button class="chip" data-id="${lp.id}">${esc(lp.name)} →</button></div>`:"")
+    + sec("Riders",riders) + sec("Coaches",PEOPLE.filter(p=>p.role==="coach")) + sec("Malung youth trainers",PEOPLE.filter(p=>p.role==="youth"));
+  $("#picker").innerHTML = html || `<div class="empty">No name matches “${esc($("#q").value)}”.</div>`;
 }
-
-function showPerson(id){
-  const p = PEOPLE.find(x=>x.id===id);
-  if(!p){ $("#person").innerHTML=""; $("#picker").hidden=false; return; }
-  $("#picker").hidden = true;
-  let meta = "";
-  if (p.role==="rider"){
-    const g = GROUPS[p.group];
-    meta = `Level: <span class="lvl ${p.lvl}">${LVLNAME[p.lvl]}</span><br>Group: ${esc(g.label)} · Coach${g.coaches.length>1?"es":""}: ${esc(g.coaches.join(", "))}`;
-  } else if (p.role==="coach"){
-    const g = GROUPS[p.group];
-    meta = `Coach · ${esc(g.label)} group (${ridersIn(p.group).length} riders)`;
-  } else {
-    meta = `Malung youth trainer · Saturday 10:00–13:30 and/or Sunday 13:00–15:00, whichever you picked in the poll`;
-  }
-  const mine = EVENTS.filter(e=>e.who.includes(p.name));
-  let roster = "";
-  if (p.role==="coach") roster = `<div class="note">Your group: ${ridersIn(p.group).map(r=>esc(r.name)).join(", ")}</div>`;
-  $("#person").innerHTML = `<button class="back" id="back">← All names</button><div class="who"><h2>${esc(p.name)}</h2><div class="meta">${meta}</div></div>${roster}${renderDays(mine,p)}`;
-  $("#back").onclick = ()=>{ if (history.state && history.state.p) history.back(); else go(""); };
+function showPerson(p){
+  $("#picker").hidden=true;
+  let meta="";
+  if (p.role==="rider"){ const g=GROUPS[p.group]; meta=`Level: <b class="${lvClass(p.lvl)}">${esc(p.lvl)} ${LV[p.lvl]||""}</b> (${esc(p.disc)})<br>Group: ${esc(p.group)}${g&&g.coaches.length?` · Coach${g.coaches.length>1?"es":""}: ${esc(g.coaches.map(c=>c.name).join(", "))}`:""}`; }
+  else if (p.role==="coach"){ const g=GROUPS[p.group]; meta=`Coach · ${esc(p.group)} group${g?` (${g.riders.length} riders)`:""}`; }
+  else { meta = `Malung youth trainer · ${p.daysSet ? [p.sat&&"Saturday 10:00–13:30", p.sun&&"Sunday 13:00–15:00"].filter(Boolean).join(" and ") : "Saturday 10:00–13:30 and/or Sunday 13:00–15:00 — whichever you picked in the poll"}`; }
+  const mine=SESSIONS.filter(s=>includes(s,p));
+  const roster = p.role==="coach" && GROUPS[p.group] ? `<div class="note">Your group: ${GROUPS[p.group].riders.map(r=>esc(r.name)).join(", ")}</div>` : "";
+  $("#person").innerHTML=`<button class="back" id="back">← All names</button><div class="who"><h2>${esc(p.name)}</h2><div class="meta">${meta}</div></div>${roster}${days(mine,p)}`;
+  $("#back").onclick=()=>{ if(history.state&&history.state.p) history.back(); else go(""); };
 }
-
-function showList(){
-  $("#person").innerHTML = ""; $("#picker").hidden = false;
-  renderPicker($("#q").value);
-}
-// Navigation: each picked name is its own history entry, so Back returns to the list.
-function go(id){
-  try { history.pushState(id?{p:id}:{}, "", id?`#${id}`:location.pathname+location.search); } catch(e){ location.hash = id; }
-  route();
-}
+function showList(){ $("#person").innerHTML=""; $("#picker").hidden=false; renderPicker(); }
+function go(id){ try{ history.pushState(id?{p:id}:{}, "", id?`#${id}`:location.pathname+location.search); }catch(e){ location.hash=id; } route(); }
 function route(){
-  const id = location.hash.slice(1);
-  if (id && PEOPLE.some(p=>p.id===id)) { try{ localStorage.setItem("me",id); }catch(e){} showPerson(id); window.scrollTo(0,0); }
-  else showList();
+  const id=location.hash.slice(1), p=PEOPLE.find(x=>x.id===id);
+  if (p){ try{ localStorage.setItem("me",id); }catch(e){} showPerson(p); window.scrollTo(0,0); } else showList();
 }
+function renderAll(){ $("#view-all").innerHTML=`<div class="note">Everything at once. Pick your name under <b>My schedule</b> to see only your own sessions.</div>`+days(SESSIONS,null); }
+function tab(which){ const me=which==="me"; $("#tab-me").setAttribute("aria-selected",me); $("#tab-all").setAttribute("aria-selected",!me); $("#view-me").hidden=!me; $("#view-all").hidden=me; if(!me) renderAll(); }
 
-function renderAll(){
-  $("#view-all").innerHTML = `<div class="note">Everything at once. Pick your name under <b>My schedule</b> to see only your own sessions.</div>` + renderDays(EVENTS, null);
+$("#tab-me").onclick=()=>tab("me");
+$("#tab-all").onclick=()=>tab("all");
+$("#q").addEventListener("input",()=>{ if(location.hash){ try{ history.replaceState({},"",location.pathname+location.search); }catch(e){} } showList(); });
+$("#picker").addEventListener("click",e=>{ const b=e.target.closest(".chip"); if(!b) return; $("#q").value=""; go(b.dataset.id); });
+window.addEventListener("popstate",route);
+window.addEventListener("hashchange",route);
+
+function start(text, source){
+  load(parseCSV(text));
+  if (!PEOPLE.length || !SESSIONS.length) return false;
+  $("#status").textContent = source;
+  route(); if (!$("#view-all").hidden) renderAll();
+  return true;
 }
-
-function tab(which){
-  const me = which==="me";
-  $("#tab-me").setAttribute("aria-selected", me); $("#tab-all").setAttribute("aria-selected", !me);
-  $("#view-me").hidden = !me; $("#view-all").hidden = me;
-}
-
-$("#updated").textContent = UPDATED;
-$("#tab-me").onclick = ()=>tab("me");
-$("#tab-all").onclick = ()=>{ renderAll(); tab("all"); };
-$("#q").addEventListener("input", ()=>{ if (location.hash) { try{ history.replaceState({}, "", location.pathname+location.search); }catch(e){} } showList(); });
-$("#picker").addEventListener("click", e=>{ const b=e.target.closest(".chip"); if(!b) return; $("#q").value=""; go(b.dataset.id); });
-window.addEventListener("popstate", route);
-window.addEventListener("hashchange", route);
-
-route();
+(async ()=>{
+  let cached=""; try{ cached=localStorage.getItem("sheet")||""; }catch(e){}
+  const snap=$("#snapshot").textContent.trim();
+  // Show something immediately, then refresh from the live sheet.
+  if (!(cached && start(cached,"Showing the last loaded schedule — refreshing…")) && snap) start(snap,"Showing the built-in schedule — refreshing…");
+  try{
+    const r=await fetch(SHEET_CSV+"&t="+Date.now(),{cache:"no-store"});
+    if(!r.ok) throw new Error(r.status);
+    const t=await r.text();
+    if (start(t,"Live from the camp sheet · loaded "+new Date().toLocaleTimeString("sv-SE",{hour:"2-digit",minute:"2-digit"}))) { try{ localStorage.setItem("sheet",t); }catch(e){} }
+  }catch(e){
+    if (!PEOPLE.length) $("#picker").innerHTML=`<div class="empty">Couldn't load the schedule. Check your connection and reload.</div>`;
+    else $("#status").textContent += " (couldn't reach the live sheet)";
+  }
+})();
 </script>
 </body>
 </html>
