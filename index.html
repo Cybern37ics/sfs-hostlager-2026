@@ -259,8 +259,11 @@ function rosterOf(s){
 }
 
 function card(s, me){
-  const time = s.end ? `${s.start}–${s.end}` : s.start;
-  const meet = s.meet && s.meet!==s.start ? `<span class="meet">meet ${s.meet}</span>` : "";
+  // With a meet time, the block runs from the meet; the yellow badge marks when riding starts.
+  const hasMeet = s.meet && s.meet!==s.start;
+  const from = hasMeet ? s.meet : s.start;
+  const time = s.end ? `${from}–${s.end}` : from;
+  const meet = hasMeet ? `<span class="meet">start ${s.start}</span>` : "";
   const tag = s.kind==="klappen" ? `<span class="tag k">Kläppen</span>` : (s.optional?`<span class="tag o">optional</span>`:"");
   const cls = s.kind==="klappen"?"klappen":(s.kind==="common"?"common":"");
   let extra="";
