@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Höstläger Kläppen 2026</title>
+<style>
+:root{
+  --bg:#f6f7f9; --card:#ffffff; --ink:#15181d; --muted:#5d6672; --line:#e3e6ea;
+  --accent:#1f6feb; --accent-ink:#ffffff; --soft:#eef3fd;
+  --svart:#20242a; --rodplus:#c2410c; --rod:#dc2626; --bla:#2563eb; --sb:#7c3aed;
+  --klappen:#0e7490; --warn:#9a6700; --warn-bg:#fff8e1;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1216; --card:#171b21; --ink:#e8ebef; --muted:#9aa4b1; --line:#2a3039;
+    --accent:#4c8dff; --accent-ink:#0b0d10; --soft:#1a2433;
+    --svart:#c9ced6; --rodplus:#fb923c; --rod:#f87171; --bla:#60a5fa; --sb:#a78bfa;
+    --klappen:#22d3ee; --warn:#e3b341; --warn-bg:#2a2410;
+  }
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+.wrap{max-width:720px;margin:0 auto;padding:16px 16px 48px}
+header h1{font-size:1.45rem;margin:4px 0 2px}
+header p{margin:0;color:var(--muted);font-size:.95rem}
+.tabs{display:flex;gap:6px;margin:16px 0 12px}
+.tab{flex:1;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:10px 8px;border-radius:10px;font-size:.95rem;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+.search{position:relative}
+.search input{width:100%;font-size:1.05rem;padding:13px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.search input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.list{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 12px;font-size:.92rem;cursor:pointer;white-space:nowrap}
+.chip:hover{border-color:var(--accent)}
+.sect{margin:14px 0 4px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.who{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}
+.who h2{margin:0 0 4px;font-size:1.25rem}
+.who .meta{color:var(--muted);font-size:.95rem}
+.who button{margin-top:10px}
+.btn{border:1px solid var(--line);background:transparent;color:var(--accent);border-radius:8px;padding:6px 10px;font-size:.9rem;cursor:pointer}
+.day{margin:22px 0 8px;font-size:1.1rem;font-weight:700;position:sticky;top:0;background:var(--bg);padding:6px 0;z-index:1}
+.ev{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:12px;padding:12px 14px;margin:8px 0}
+.ev.klappen{border-left-color:var(--klappen)}
+.ev.common{border-left-color:var(--muted)}
+.ev.mine{border-left-color:var(--accent)}
+.ev .t{font-weight:700;font-variant-numeric:tabular-nums}
+.ev .meet{display:inline-block;margin-left:6px;font-size:.85rem;color:var(--warn);background:var(--warn-bg);border-radius:6px;padding:1px 7px;font-weight:600}
+.ev h3{margin:3px 0 2px;font-size:1.02rem}
+.ev .place{color:var(--muted);font-size:.92rem}
+.ev .d{margin-top:6px;font-size:.93rem}
+.ev .tag{display:inline-block;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--klappen);border:1px solid currentColor;border-radius:5px;padding:0 5px;margin-left:6px;vertical-align:1px}
+.ev .tag.opt{color:var(--muted)}
+details{margin-top:6px}
+summary{cursor:pointer;color:var(--accent);font-size:.92rem}
+.roster{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.roster span{font-size:.86rem;background:var(--soft);border-radius:6px;padding:2px 7px}
+.lvl{font-weight:700}
+.lvl.svart{color:var(--svart)} .lvl.rodplus{color:var(--rodplus)} .lvl.rod{color:var(--rod)} .lvl.bla{color:var(--bla)} .lvl.sb{color:var(--sb)}
+.note{background:var(--warn-bg);color:var(--ink);border-radius:10px;padding:10px 12px;font-size:.92rem;margin:10px 0}
+footer{margin-top:28px;color:var(--muted);font-size:.85rem}
+.empty{color:var(--muted);text-align:center;padding:24px 0}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Höstläger Kläppen 2026</h1>
+    <p>Stockholm Freeski &amp; Snowboard Club · Fri 2 – Sun 4 October</p>
+  </header>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="tab-me" aria-selected="true">My schedule</button>
+    <button class="tab" role="tab" id="tab-all" aria-selected="false">Whole weekend</button>
+  </div>
+
+  <section id="view-me">
+    <div class="search">
+      <input id="q" type="search" placeholder="Type your name…" autocomplete="off" aria-label="Find your name">
+    </div>
+    <div id="picker"></div>
+    <div id="person"></div>
+  </section>
+
+  <section id="view-all" hidden></section>
+
+  <footer>
+    Times are in Swedish time. Lifts in the Höstpark run 10:00–16:00. Questions: ask your group's coach.<br>
+    Last updated <span id="updated"></span>.
+  </footer>
+</div>
+
+<script>
+const UPDATED = "2 Oct 2026, 04:00";
+
+// ---------- People ----------
+const GROUPS = {
+  albert: {label:"Svart", lvl:"svart", emoji:"⚫", coaches:["Albert"]},
+  jason:  {label:"Röd+",  lvl:"rodplus", emoji:"🔴+", coaches:["Jason"]},
+  john:   {label:"Röd / Blå", lvl:"rod", emoji:"🔵", coaches:["John"]},
+  daniel: {label:"Röd",   lvl:"rod", emoji:"🔴", coaches:["Daniel"]},
+  sb:     {label:"Snowboard", lvl:"sb", emoji:"🏂", coaches:["Lanlan","Göran","Arvid"]},
+};
+// riders: [display name, level key, group]
+const RIDERS = [
+  ["Bo E.","svart","albert"],["Carl-Alfred H.","svart","albert"],["Buster W.","svart","albert"],
+  ["Sam N.","svart","albert"],["Anton J.","svart","albert"],["Liam R.","svart","albert"],
+  ["Melvin S.","svart","jason"],["Hampus Ö.","svart","jason"],["Aksel R.","svart","jason"],
+  ["Alexander B.","rodplus","jason"],["Emil H.","rodplus","jason"],["Erik H.","rodplus","jason"],
+  ["Bengt A.","rodplus","jason"],["Ture F.","rodplus","jason"],
+  ["Kim E.","bla","john"],["Nikki H.L.","bla","john"],["Albin T.","rod","john"],["Oscar S.","rod","john"],["Carl H.","rod","john"],
+  ["Phlip H.","rod","daniel"],["Victor A.","rod","daniel"],["Petter H.","rod","daniel"],["Ruben T.","rod","daniel"],
+  ["Robin Z.","sb","sb"],["Mille Z.","sb","sb"],["Olle M.","sb","sb"],["Joni S.","sb","sb"],["Vera M.","sb","sb"],
+  ["Emil D.","sb","sb"],["Albin G.","sb","sb"],["Eda T.","sb","sb"],["Julian W.","sb","sb"],["John John A.","sb","sb"],
+];
+const COACHES = ["Jason","Albert","John","Daniel","Lanlan","Göran","Arvid"];
+const YOUTH = ["Luna","Elina","Loke","Filip","Rasmus","Charlie"];
+const LVLNAME = {svart:"Svart ⚫ (ski)", rodplus:"Röd+ 🔴+ (ski)", rod:"Röd 🔴 (ski)", bla:"Blå 🔵 (ski)", sb:"Snowboard 🏂"};
+
+const PEOPLE = [];
+RIDERS.forEach(([n,l,g])=>PEOPLE.push({id:slug(n),name:n,role:"rider",lvl:l,group:g}));
+COACHES.forEach(n=>PEOPLE.push({id:slug(n),name:n,role:"coach",group:Object.keys(GROUPS).find(k=>GROUPS[k].coaches.includes(n))}));
+YOUTH.forEach(n=>PEOPLE.push({id:slug(n),name:n,role:"youth"}));
+function slug(s){return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"")}
+const byName = Object.fromEntries(PEOPLE.map(p=>[p.name,p]));
+const ridersIn = g => PEOPLE.filter(p=>p.role==="rider"&&p.group===g);
+
+// ---------- Sessions ----------
+const SAT_BAG = ["Kim E.","Albin T.","Oscar S.","Bengt A.","Carl H.","Erik H.","Phlip H.","Victor A.","Petter H.","Ruben T.","Alexander B.","Ture F.","Emil H.","Robin Z.","Emil D.","Albin G.","John John A.","Bo E.","Buster W.","Carl-Alfred H.","Hampus Ö.","Aksel R.","Melvin S.","Anton J.","Sam N.","Liam R."];
+const SAT_PARK_ONLY = ["Nikki H.L.","Olle M.","Joni S.","Vera M.","Eda T.","Mille Z.","Julian W."];
+const SUN_BAG = ["Kim E.","Bengt A.","Erik H.","Phlip H.","Victor A.","Petter H.","Ruben T.","Alexander B.","Emil H.","Robin Z.","Olle M.","Joni S.","Vera M.","Emil D.","Albin G.","Eda T.","Julian W.","John John A.","Bo E.","Buster W.","Carl-Alfred H.","Hampus Ö.","Melvin S.","Sam N.","Liam R."];
+const SUN_PARK_ONLY = ["Nikki H.L.","Albin T.","Oscar S.","Carl H.","Ture F.","Mille Z.","Aksel R.","Anton J."];
+
+const ALL_RIDERS = PEOPLE.filter(p=>p.role==="rider").map(p=>p.name);
+const ALL = [...ALL_RIDERS, ...COACHES];
+const STAYING = "everyone staying at Kurbits";
+
+// kind: "camp" (club session), "common" (meals/info), "klappen" (Kläppen's own program)
+const EVENTS = [
+  // Friday
+  {day:"fri", start:"12:00", title:"Check-in at Hotell Kurbits opens", place:"Hotell Kurbits", kind:"common", who:ALL,
+   d:"One contact person per room gets the check-in info. Bed linen and towels are in the rooms (make your own bed). Rooms have a small kitchen. Breakfast and departure cleaning are included."},
+  {day:"fri", start:"15:45", end:"17:45", meet:"15:00", title:"Coaches' bag session (bag 15:45)", place:"Kläppen Arena · airbag", kind:"camp", who:COACHES,
+   d:"For the coaches who are up early."},
+  {day:"fri", start:"19:00", end:"21:00", title:"Coaches' meeting + dinner", place:"Place set in the coaches' chat", kind:"camp", who:COACHES,
+   d:"Season input and a run-through of the weekend."},
+  {day:"fri", start:"21:00", end:"23:00", title:"Kläppen Video Awards", place:"Kläppen", kind:"klappen", who:COACHES, optional:true,
+   d:"Coaches go together after dinner."},
+
+  // Saturday
+  {day:"sat", start:"08:30", end:"09:00", title:"Gathering + group photo", place:"Arena area — below the arena, by the parking", kind:"camp", who:ALL},
+  {day:"sat", start:"09:00", end:"09:30", title:"Joint warm-up", place:"Arena area", kind:"camp", who:ALL},
+  ...Object.keys(GROUPS).map(g=>({day:"sat", start:"10:00", end:"11:00", meet:"09:30", title:`Höstpark — ${GROUPS[g].label} group`, place:"Höstpark · meet at the bottom of the Höstpark lift", kind:"camp", group:g,
+     who:[...ridersIn(g).map(p=>p.name), ...GROUPS[g].coaches],
+     d: g==="sb" ? "Lifts open at 10:00." : "Lifts open at 10:00. The Malung youth trainers split the groups into packs of 3–4 that ride together and drop in staggered."})),
+  {day:"sat", start:"10:00", end:"13:30", meet:"10:00", title:"Park opening — ride with your pack", place:"Meet at the bottom of the Höstpark lift", kind:"camp", who:YOUTH,
+   d:"If you picked Saturday in the poll. You'll get a pack of 3–4 kids inside one coach's group, assigned when we meet. Help them feel at home in the park and build confidence. Lunch is on the club. After 13:30 you're free — ride the rail jam and inspire them."},
+  {day:"sat", start:"11:30", end:"12:30", title:"Lunch", place:"Bring your own · Restaurang Halster is open for lunch", kind:"common", who:[...ALL, ...YOUTH],
+   d:"Parents help make sure every rider eats. Malung youth trainers: lunch is on the club."},
+  {day:"sat", start:"13:00", end:"15:00", meet:"12:30", title:"Höstpark — all groups", place:"Höstpark", kind:"camp", who:ALL},
+  {day:"sat", start:"13:30", end:"16:30", title:"Opening Showdown rail jam", place:"Höstpark", kind:"klappen", optional:true, who:[...ALL, ...YOUTH],
+   d:"For anyone who wants to ride. Training 13:30–14:30 · rider meeting 14:30 · jam 14:45–15:45 · prizes 16:00. No sign-up needed. If you're in the 15:45 bag session, you meet at the bag at 15:00."},
+  {day:"sat", start:"15:00", end:"16:00", title:"Snack break", place:"", kind:"common", who:ALL_RIDERS,
+   d:"Parents help remind everyone to eat something (fruit, bars)."},
+  {day:"sat", start:"15:45", end:"17:45", meet:"15:00", title:"Airbag (bag 15:45)", place:"Kläppen Arena · airbag", kind:"camp", who:[...SAT_BAG, "Albert","Arvid","Daniel","John","Jason","Göran","Lanlan"],
+   d:"Coaches: Albert, Arvid, Daniel, John, Jason + Göran or Lanlan. Meet 45 minutes early. It's very wet — bring extra gloves and clothes.", roster:SAT_BAG},
+  {day:"sat", start:"15:00", end:"16:00", title:"Höstpark — keep riding (no bag today)", place:"Höstpark · lifts close 16:00", kind:"camp", who:[...SAT_PARK_ONLY, "Göran","Lanlan"],
+   d:"With Göran or Lanlan.", roster:SAT_PARK_ONLY},
+  {day:"sat", start:"16:15", end:"16:30", title:"Autograph signing with the national team", place:"Bottom of the Höstpark", kind:"klappen", optional:true, who:[...ALL, ...YOUTH],
+   d:"Right after the rail jam prizes. Overlaps the bag session."},
+  {day:"sat", start:"18:30", end:"19:00", title:"Ski federation: news for the season", place:"Värmestugan, next to the hotel", kind:"common", who:ALL},
+  {day:"sat", start:"19:00", end:"22:00", title:"Pizza + film night", place:"Värmestugan", kind:"common", who:ALL,
+   d:"Pizzas were pre-ordered through Fredrik Axelsson."},
+  {day:"sat", start:"22:00", title:"Bedtime (quiet by 23:00)", place:"Hotell Kurbits", kind:"common", who:ALL_RIDERS},
+
+  // Sunday
+  {day:"sun", start:"09:00", end:"11:00", meet:"08:15", title:"Airbag (bag 09:00)", place:"Kläppen Arena · airbag", kind:"camp", who:[...SUN_BAG, "Albert","Arvid","Daniel","Göran","Jason","Lanlan"],
+   d:"Coaches: Albert, Arvid, Daniel, Göran, Jason, Lanlan. Meet 45 minutes early.", roster:SUN_BAG},
+  {day:"sun", start:"10:00", end:"11:00", meet:"09:30", title:"Höstpark (no bag this morning)", place:"Höstpark · meet at the bottom of the Höstpark lift", kind:"camp", who:[...SUN_PARK_ONLY, "John","Lanlan"],
+   d:"With John (and Lanlan). Lifts open at 10:00.", roster:SUN_PARK_ONLY},
+  {day:"sun", start:"10:00", title:"Check-out from Hotell Kurbits", place:"Hotell Kurbits", kind:"common", who:ALL,
+   d:"By 10:00. If you're in the morning bag session you can keep your room until 12:00."},
+  {day:"sun", start:"11:30", end:"12:30", title:"Lunch", place:"Bring your own · Restaurang Halster", kind:"common", who:[...ALL, ...YOUTH],
+   d:"Malung youth trainers: join us — lunch is on the club."},
+  {day:"sun", start:"13:00", end:"13:30", title:"Early send-off (for those leaving early)", place:"", kind:"common", who:ALL, optional:true},
+  {day:"sun", start:"13:30", end:"15:30", meet:"13:00", title:"Höstpark — all groups", place:"Höstpark", kind:"camp", who:ALL},
+  {day:"sun", start:"13:00", end:"15:00", meet:"13:00", title:"Trick help", place:"Meet at the bottom of the Höstpark lift", kind:"camp", who:YOUTH,
+   d:"If you picked Sunday in the poll. Ride with a pack and help the kids work on specific tricks."},
+  {day:"sun", start:"15:45", end:"16:00", title:"Closing", place:"", kind:"common", who:ALL,
+   d:"After this you can stay on your own responsibility."},
+];
+const DAYS = {fri:"Friday 2 October", sat:"Saturday 3 October", sun:"Sunday 4 October"};
+
+// ---------- Rendering ----------
+const $ = s=>document.querySelector(s);
+const esc = s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const mins = t=>{const [h,m]=t.split(":").map(Number);return h*60+m};
+const sortEv = (a,b)=>mins(a.meet&&a.kind==="camp"?a.meet:a.start)-mins(b.meet&&b.kind==="camp"?b.meet:b.start) || mins(a.start)-mins(b.start);
+
+function evCard(e, me){
+  const time = e.end ? `${e.start}–${e.end}` : e.start;
+  const meet = e.meet && e.meet!==e.start ? `<span class="meet">meet ${e.meet}</span>` : "";
+  const tag = e.kind==="klappen" ? `<span class="tag">Kläppen</span>` : (e.optional?`<span class="tag opt">optional</span>`:"");
+  let extra = "";
+  if (e.group) extra += rosterBlock("Group", ridersIn(e.group).map(p=>p.name), me);
+  else if (e.roster) extra += rosterBlock(`Riders (${e.roster.length})`, e.roster, me);
+  const cls = e.kind==="klappen"?"klappen":(e.kind==="common"?"common":"mine");
+  return `<div class="ev ${cls}"><div class="t">${time}${meet}</div><h3>${esc(e.title)}${tag}</h3>${e.place?`<div class="place">${esc(e.place)}</div>`:""}${e.d?`<div class="d">${esc(e.d)}</div>`:""}${extra}</div>`;
+}
+function rosterBlock(label, names, me){
+  return `<details><summary>${esc(label)}</summary><div class="roster">${names.map(n=>{const p=byName[n];const lv=p&&p.lvl?` <span class="lvl ${p.lvl}">${p.lvl==="sb"?"🏂":GROUPEMOJI(p.lvl)}</span>`:"";return `<span${me&&me.name===n?' style="outline:2px solid var(--accent)"':""}>${esc(n)}${lv}</span>`}).join("")}</div></details>`;
+}
+function GROUPEMOJI(l){return {svart:"⚫",rodplus:"🔴+",rod:"🔴",bla:"🔵"}[l]||""}
+
+function renderDays(list, me){
+  let html="";
+  for (const d of Object.keys(DAYS)){
+    const evs = list.filter(e=>e.day===d).sort(sortEv);
+    if(!evs.length) continue;
+    html += `<div class="day">${DAYS[d]}</div>` + evs.map(e=>evCard(e,me)).join("");
+  }
+  return html || `<div class="empty">Nothing scheduled.</div>`;
+}
+
+function renderPicker(filter){
+  const f = slug(filter||"");
+  const match = p => !f || slug(p.name).includes(f);
+  const sec = (label, arr) => { const m = arr.filter(match); return m.length ? `<div class="sect">${label}</div><div class="list">${m.map(p=>`<button class="chip" data-id="${p.id}">${esc(p.name)}</button>`).join("")}</div>` : ""; };
+  const riders = PEOPLE.filter(p=>p.role==="rider").sort((a,b)=>a.name.localeCompare(b.name,"sv"));
+  const html = sec("Riders", riders) + sec("Coaches", PEOPLE.filter(p=>p.role==="coach")) + sec("Malung youth trainers", PEOPLE.filter(p=>p.role==="youth"));
+  $("#picker").innerHTML = html || `<div class="empty">No name matches “${esc(filter)}”.</div>`;
+}
+
+function showPerson(id){
+  const p = PEOPLE.find(x=>x.id===id);
+  if(!p){ $("#person").innerHTML=""; $("#picker").hidden=false; return; }
+  $("#picker").hidden = true;
+  let meta = "";
+  if (p.role==="rider"){
+    const g = GROUPS[p.group];
+    meta = `<span class="lvl ${p.lvl}">${LVLNAME[p.lvl]}</span> · Group: ${esc(g.label)} · Coach${g.coaches.length>1?"es":""}: ${esc(g.coaches.join(", "))}`;
+  } else if (p.role==="coach"){
+    const g = GROUPS[p.group];
+    meta = `Coach · ${esc(g.label)} group (${ridersIn(p.group).length} riders)`;
+  } else {
+    meta = `Malung youth trainer · Saturday 10:00–13:30 and/or Sunday 13:00–15:00, whichever you picked in the poll`;
+  }
+  const mine = EVENTS.filter(e=>e.who.includes(p.name));
+  let roster = "";
+  if (p.role==="coach") roster = `<div class="note">Your group: ${ridersIn(p.group).map(r=>esc(r.name)).join(", ")}</div>`;
+  $("#person").innerHTML = `<div class="who"><h2>${esc(p.name)}</h2><div class="meta">${meta}</div><button class="btn" id="change">Change name</button></div>${roster}${renderDays(mine,p)}`;
+  $("#change").onclick = ()=>{ setHash(""); $("#q").value=""; renderPicker(""); $("#person").innerHTML=""; $("#picker").hidden=false; $("#q").focus(); };
+}
+
+function renderAll(){
+  $("#view-all").innerHTML = `<div class="note">Everything at once. Pick your name under <b>My schedule</b> to see only your own sessions.</div>` + renderDays(EVENTS, null);
+}
+
+function setHash(id){ try{ history.replaceState(null,"", id?`#${id}`:location.pathname); }catch(e){ location.hash=id; } try{ id?localStorage.setItem("me",id):localStorage.removeItem("me"); }catch(e){} }
+function tab(which){
+  const me = which==="me";
+  $("#tab-me").setAttribute("aria-selected", me); $("#tab-all").setAttribute("aria-selected", !me);
+  $("#view-me").hidden = !me; $("#view-all").hidden = me;
+}
+
+$("#updated").textContent = UPDATED;
+$("#tab-me").onclick = ()=>tab("me");
+$("#tab-all").onclick = ()=>{ renderAll(); tab("all"); };
+$("#q").addEventListener("input", e=>{ $("#person").innerHTML=""; $("#picker").hidden=false; renderPicker(e.target.value); });
+$("#picker").addEventListener("click", e=>{ const b=e.target.closest(".chip"); if(!b) return; setHash(b.dataset.id); showPerson(b.dataset.id); window.scrollTo(0,0); });
+
+renderPicker("");
+let start = location.hash.slice(1);
+if(!start){ try{ start = localStorage.getItem("me")||""; }catch(e){} }
+if(start) showPerson(start);
+</script>
+</body>
+</html>
