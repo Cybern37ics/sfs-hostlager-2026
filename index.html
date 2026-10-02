@@ -51,6 +51,8 @@ header p{margin:2px 0 0;color:var(--muted);font-size:.9rem}
 .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:1px solid currentColor;border-radius:5px;padding:0 5px;margin-left:6px;vertical-align:2px}
 .tag.k{color:var(--blue)} .tag.o{color:var(--muted)}
 details{margin-top:6px}
+.dd p{margin:6px 0}
+.dd img{display:block;width:100%;border-radius:8px;margin-top:6px}
 summary{cursor:pointer;color:var(--ink);font-size:.9rem;text-decoration:underline;text-underline-offset:3px}
 .roster{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
 .roster span{font-size:.86rem;background:#1f1f1f;border-radius:6px;padding:2px 7px}
@@ -226,7 +228,8 @@ function load(rows){
       daysSet: !!daysRaw};
   });
   SESSIONS = table(rows,"Day").filter(s=>s.title).map(s=>({day:(s.day||"").slice(0,3).toLowerCase(), start:hhmm(s.start), end:hhmm(s.end), meet:hhmm(s.meet),
-    title:s.title, place:s.place, kind:(s.type||"camp").toLowerCase(), optional:/^(y|yes|ja|x)/i.test(s.optional||""), who:s.who||"", d:s.details, youth:s["youth note"]}));
+    title:s.title, place:s.place, kind:(s.type||"camp").toLowerCase(), optional:/^(y|yes|ja|x)/i.test(s.optional||""), who:s.who||"", d:s.details, youth:s["youth note"],
+    dd:s.dropdown, ddText:s["dropdown text"], ddImg:s["dropdown image"]}));
   GROUPS={};
   PEOPLE.forEach(p=>{ if(!p.group) return; const g=GROUPS[p.group]||(GROUPS[p.group]={name:p.group,riders:[],coaches:[]}); (p.role==="coach"?g.coaches:p.role==="rider"?g.riders:[]).push(p); });
 }
@@ -269,6 +272,9 @@ function card(s, me){
   let extra="";
   if (me && me.role==="youth" && s.youth) extra += `<div class="y">${esc(s.youth)}</div>`;
   if (me && me.role==="youth" && !me.daysSet && /youth-(sat|sun)/i.test(s.who)) extra += `<div class="for">If you picked this day in the poll.</div>`;
+  // Image is a file in this repo (no slashes) or an https link.
+  const img = s.ddImg && (/^[\w.-]+$/.test(s.ddImg) || /^https:\/\//.test(s.ddImg)) ? `<img src="${esc(s.ddImg)}" alt="" loading="lazy">` : "";
+  if (s.dd) extra += `<details class="dd"><summary>${esc(s.dd)}</summary>${s.ddText?`<p>${esc(s.ddText)}</p>`:""}${img}</details>`;
   const ros = rosterOf(s);
   const isAll = tokens(s).some(x=>["everyone","riders"].includes(x.toLowerCase()));
   if (!me) { const f=forLine(s); if (f) extra += `<div class="for">For: ${esc(f)}</div>`; }
