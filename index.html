@@ -263,7 +263,7 @@ function card(s, me){
   const hasMeet = s.meet && s.meet!==s.start;
   const from = hasMeet ? s.meet : s.start;
   const time = s.end ? `${from}–${s.end}` : from;
-  const meet = hasMeet ? `<span class="meet">start ${s.start}</span>` : "";
+  const meet = hasMeet ? `<span class="meet">starts ${s.start}</span>` : "";
   const tag = s.kind==="klappen" ? `<span class="tag k">Kläppen</span>` : (s.optional?`<span class="tag o">optional</span>`:"");
   const cls = s.kind==="klappen"?"klappen":(s.kind==="common"?"common":"");
   let extra="";
