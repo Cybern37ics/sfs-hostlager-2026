@@ -93,7 +93,7 @@ footer{margin-top:28px;color:var(--muted);font-size:.82rem;border-top:1px solid 
 <!-- Fallback snapshot of the sheet, used only if the live sheet can't be reached. -->
 <script type="text/csv" id="snapshot">
 PEOPLE,This tab feeds the weekend page https://cybern37ics.github.io/sfs-hostlager-2026/ — edits show there within ~5 min. First names only (initial if two share a name).,,,,,,,,,
-Name,Role,Discipline,Level,Group (named by coach),Days (youth trainers: Sat / Sun / Sat+Sun),,,,,
+Name,Role,Discipline,Level,Group,Days (youth trainers: Sat / Sun / Sat+Sun),,,,,
 Bo,rider,ski,Svart,Albert,,,,,,
 Carl-Alfred,rider,ski,Svart,Albert,,,,,,
 Buster,rider,ski,Svart,Albert,,,,,,
@@ -204,7 +204,8 @@ function parseCSV(text){
 function table(rows, firstHeader){
   const h = rows.findIndex(r=>r[0]===firstHeader);
   if (h<0) return [];
-  const head = rows[h].map(x=>x.toLowerCase());
+  // Header names are matched loosely: "Group (named by coach)" reads as "group".
+  const head = rows[h].map(x=>x.toLowerCase().replace(/\s*\(.*$/,"").trim());
   const out=[];
   for (let i=h+1;i<rows.length;i++){
     const r=rows[i];
