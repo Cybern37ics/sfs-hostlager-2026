@@ -40,7 +40,7 @@ header p{margin:0;color:var(--muted);font-size:.95rem}
 .who h2{margin:0 0 4px;font-size:1.25rem}
 .who .meta{color:var(--muted);font-size:.95rem}
 .who button{margin-top:10px}
-.btn{border:1px solid var(--line);background:transparent;color:var(--accent);border-radius:8px;padding:6px 10px;font-size:.9rem;cursor:pointer}
+.back{display:inline-block;margin:14px 0 0;border:0;background:transparent;color:var(--accent);font-size:1rem;font-weight:600;padding:6px 0;cursor:pointer}
 .day{margin:22px 0 8px;font-size:1.1rem;font-weight:700;position:sticky;top:0;background:var(--bg);padding:6px 0;z-index:1}
 .ev{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:12px;padding:12px 14px;margin:8px 0}
 .ev.klappen{border-left-color:var(--klappen)}
@@ -227,10 +227,12 @@ function renderDays(list, me){
 
 function renderPicker(filter){
   const f = slug(filter||"");
+  let last = ""; try{ last = localStorage.getItem("me")||""; }catch(e){}
+  const lp = !f && PEOPLE.find(p=>p.id===last);
   const match = p => !f || slug(p.name).includes(f);
   const sec = (label, arr) => { const m = arr.filter(match); return m.length ? `<div class="sect">${label}</div><div class="list">${m.map(p=>`<button class="chip" data-id="${p.id}">${esc(p.name)}</button>`).join("")}</div>` : ""; };
   const riders = PEOPLE.filter(p=>p.role==="rider").sort((a,b)=>a.name.localeCompare(b.name,"sv"));
-  const html = sec("Riders", riders) + sec("Coaches", PEOPLE.filter(p=>p.role==="coach")) + sec("Malung youth trainers", PEOPLE.filter(p=>p.role==="youth"));
+  const html = (lp ? `<div class="sect">Last viewed</div><div class="list"><button class="chip" data-id="${lp.id}">${esc(lp.name)} →</button></div>` : "") + sec("Riders", riders) + sec("Coaches", PEOPLE.filter(p=>p.role==="coach")) + sec("Malung youth trainers", PEOPLE.filter(p=>p.role==="youth"));
   $("#picker").innerHTML = html || `<div class="empty">No name matches “${esc(filter)}”.</div>`;
 }
 
@@ -241,7 +243,7 @@ function showPerson(id){
   let meta = "";
   if (p.role==="rider"){
     const g = GROUPS[p.group];
-    meta = `<span class="lvl ${p.lvl}">${LVLNAME[p.lvl]}</span> · Group: ${esc(g.label)} · Coach${g.coaches.length>1?"es":""}: ${esc(g.coaches.join(", "))}`;
+    meta = `Level: <span class="lvl ${p.lvl}">${LVLNAME[p.lvl]}</span><br>Group: ${esc(g.label)} · Coach${g.coaches.length>1?"es":""}: ${esc(g.coaches.join(", "))}`;
   } else if (p.role==="coach"){
     const g = GROUPS[p.group];
     meta = `Coach · ${esc(g.label)} group (${ridersIn(p.group).length} riders)`;
@@ -251,15 +253,29 @@ function showPerson(id){
   const mine = EVENTS.filter(e=>e.who.includes(p.name));
   let roster = "";
   if (p.role==="coach") roster = `<div class="note">Your group: ${ridersIn(p.group).map(r=>esc(r.name)).join(", ")}</div>`;
-  $("#person").innerHTML = `<div class="who"><h2>${esc(p.name)}</h2><div class="meta">${meta}</div><button class="btn" id="change">Change name</button></div>${roster}${renderDays(mine,p)}`;
-  $("#change").onclick = ()=>{ setHash(""); $("#q").value=""; renderPicker(""); $("#person").innerHTML=""; $("#picker").hidden=false; $("#q").focus(); };
+  $("#person").innerHTML = `<button class="back" id="back">← All names</button><div class="who"><h2>${esc(p.name)}</h2><div class="meta">${meta}</div></div>${roster}${renderDays(mine,p)}`;
+  $("#back").onclick = ()=>{ if (history.state && history.state.p) history.back(); else go(""); };
+}
+
+function showList(){
+  $("#person").innerHTML = ""; $("#picker").hidden = false;
+  renderPicker($("#q").value);
+}
+// Navigation: each picked name is its own history entry, so Back returns to the list.
+function go(id){
+  try { history.pushState(id?{p:id}:{}, "", id?`#${id}`:location.pathname+location.search); } catch(e){ location.hash = id; }
+  route();
+}
+function route(){
+  const id = location.hash.slice(1);
+  if (id && PEOPLE.some(p=>p.id===id)) { try{ localStorage.setItem("me",id); }catch(e){} showPerson(id); window.scrollTo(0,0); }
+  else showList();
 }
 
 function renderAll(){
   $("#view-all").innerHTML = `<div class="note">Everything at once. Pick your name under <b>My schedule</b> to see only your own sessions.</div>` + renderDays(EVENTS, null);
 }
 
-function setHash(id){ try{ history.replaceState(null,"", id?`#${id}`:location.pathname); }catch(e){ location.hash=id; } try{ id?localStorage.setItem("me",id):localStorage.removeItem("me"); }catch(e){} }
 function tab(which){
   const me = which==="me";
   $("#tab-me").setAttribute("aria-selected", me); $("#tab-all").setAttribute("aria-selected", !me);
@@ -269,13 +285,12 @@ function tab(which){
 $("#updated").textContent = UPDATED;
 $("#tab-me").onclick = ()=>tab("me");
 $("#tab-all").onclick = ()=>{ renderAll(); tab("all"); };
-$("#q").addEventListener("input", e=>{ $("#person").innerHTML=""; $("#picker").hidden=false; renderPicker(e.target.value); });
-$("#picker").addEventListener("click", e=>{ const b=e.target.closest(".chip"); if(!b) return; setHash(b.dataset.id); showPerson(b.dataset.id); window.scrollTo(0,0); });
+$("#q").addEventListener("input", ()=>{ if (location.hash) { try{ history.replaceState({}, "", location.pathname+location.search); }catch(e){} } showList(); });
+$("#picker").addEventListener("click", e=>{ const b=e.target.closest(".chip"); if(!b) return; $("#q").value=""; go(b.dataset.id); });
+window.addEventListener("popstate", route);
+window.addEventListener("hashchange", route);
 
-renderPicker("");
-let start = location.hash.slice(1);
-if(!start){ try{ start = localStorage.getItem("me")||""; }catch(e){} }
-if(start) showPerson(start);
+route();
 </script>
 </body>
 </html>
