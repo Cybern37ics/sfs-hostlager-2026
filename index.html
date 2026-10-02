@@ -93,30 +93,30 @@ footer{margin-top:28px;color:var(--muted);font-size:.82rem;border-top:1px solid 
 <!-- Fallback snapshot of the sheet, used only if the live sheet can't be reached. -->
 <script type="text/csv" id="snapshot">
 PEOPLE,This tab feeds the weekend page https://cybern37ics.github.io/sfs-hostlager-2026/ — edits show there within ~5 min. First names only (initial if two share a name).,,,,,,,,,
-Name,Role,Discipline,Level,Group,Days (youth trainers: Sat / Sun / Sat+Sun),,,,,
-Bo,rider,ski,Svart,Svart,,,,,,
-Carl-Alfred,rider,ski,Svart,Svart,,,,,,
-Buster,rider,ski,Svart,Svart,,,,,,
-Sam,rider,ski,Svart,Svart,,,,,,
-Anton,rider,ski,Svart,Svart,,,,,,
-Liam,rider,ski,Svart,Svart,,,,,,
-Melvin,rider,ski,Svart,Röd+,,,,,,
-Hampus,rider,ski,Svart,Röd+,,,,,,
-Aksel,rider,ski,Svart,Röd+,,,,,,
-Alexander,rider,ski,Röd+,Röd+,,,,,,
-Emil H,rider,ski,Röd+,Röd+,,,,,,
-Erik,rider,ski,Röd+,Röd+,,,,,,
-Bengt,rider,ski,Röd+,Röd+,,,,,,
-Ture,rider,ski,Röd+,Röd+,,,,,,
-Kim,rider,ski,Blå,Röd/Blå,,,,,,
-Nikki,rider,ski,Blå,Röd/Blå,,,,,,
-Albin T,rider,ski,Röd,Röd/Blå,,,,,,
-Oscar,rider,ski,Röd,Röd/Blå,,,,,,
-Carl,rider,ski,Röd,Röd/Blå,,,,,,
-Phlip,rider,ski,Röd,Röd,,,,,,
-Victor,rider,ski,Röd,Röd,,,,,,
-Petter,rider,ski,Röd,Röd,,,,,,
-Ruben,rider,ski,Röd,Röd,,,,,,
+Name,Role,Discipline,Level,Group (named by coach),Days (youth trainers: Sat / Sun / Sat+Sun),,,,,
+Bo,rider,ski,Svart,Albert,,,,,,
+Carl-Alfred,rider,ski,Svart,Albert,,,,,,
+Buster,rider,ski,Svart,Albert,,,,,,
+Sam,rider,ski,Svart,Albert,,,,,,
+Anton,rider,ski,Svart,Albert,,,,,,
+Liam,rider,ski,Svart,Albert,,,,,,
+Melvin,rider,ski,Svart,Jason,,,,,,
+Hampus,rider,ski,Svart,Jason,,,,,,
+Aksel,rider,ski,Svart,Jason,,,,,,
+Alexander,rider,ski,Röd+,Jason,,,,,,
+Emil H,rider,ski,Röd+,Jason,,,,,,
+Erik,rider,ski,Röd+,Jason,,,,,,
+Bengt,rider,ski,Röd+,Jason,,,,,,
+Ture,rider,ski,Röd+,Jason,,,,,,
+Kim,rider,ski,Blå,John,,,,,,
+Nikki,rider,ski,Blå,John,,,,,,
+Albin T,rider,ski,Röd,John,,,,,,
+Oscar,rider,ski,Röd,John,,,,,,
+Carl,rider,ski,Röd,John,,,,,,
+Phlip,rider,ski,Röd,Daniel,,,,,,
+Victor,rider,ski,Röd,Daniel,,,,,,
+Petter,rider,ski,Röd,Daniel,,,,,,
+Ruben,rider,ski,Röd,Daniel,,,,,,
 Robin,rider,snowboard,Snowboard,Snowboard,,,,,,
 Mille,rider,snowboard,Snowboard,Snowboard,,,,,,
 Olle,rider,snowboard,Snowboard,Snowboard,,,,,,
@@ -127,10 +127,10 @@ Albin G,rider,snowboard,Snowboard,Snowboard,,,,,,
 Eda,rider,snowboard,Snowboard,Snowboard,,,,,,
 Julian,rider,snowboard,Snowboard,Snowboard,,,,,,
 John John,rider,snowboard,Snowboard,Snowboard,,,,,,
-Jason,coach,ski,,Röd+,,,,,,
-Albert,coach,ski,,Svart,,,,,,
-John,coach,ski,,Röd/Blå,,,,,,
-Daniel,coach,ski,,Röd,,,,,,
+Jason,coach,ski,,Jason,,,,,,
+Albert,coach,ski,,Albert,,,,,,
+John,coach,ski,,John,,,,,,
+Daniel,coach,ski,,Daniel,,,,,,
 Lanlan,coach,snowboard,,Snowboard,,,,,,
 Göran,coach,snowboard,,Snowboard,,,,,,
 Arvid,coach,snowboard,,Snowboard,,,,,,
@@ -141,7 +141,7 @@ Filip,youth,ski,,,,,,,,
 Rasmus,youth,ski,,,,,,,,
 Charlie,youth,ski,,,,,,,,
 ,,,,,,,,,,
-SESSIONS,"Who: names separated by commas, or shortcuts — everyone (riders + coaches), riders, coaches, youth, youth-sat, youth-sun, group:Svart / group:Röd+ / group:Röd/Blå / group:Röd / group:Snowboard. Type: camp / common / klappen. Youth note shows only to youth trainers.",,,,,,,,,
+SESSIONS,"Who: names separated by commas, or shortcuts — everyone (riders + coaches), riders, coaches, youth, youth-sat, youth-sun, group:Albert / group:Jason / group:John / group:Daniel / group:Snowboard. Type: camp / common / klappen. Youth note shows only to youth trainers.",,,,,,,,,
 Day,Start,End,Meet,Title,Place,Type,Optional,Who,Details,Youth note
 Fri,12:00,,,Check-in at Hotell Kurbits opens,Hotell Kurbits,common,,everyone,One contact person per room gets the check-in info. Bed linen and towels are in the rooms (make your own bed). Rooms have a small kitchen. Breakfast and departure cleaning are included.,
 Fri,15:45,17:45,15:00,Coaches' bag session (bag 15:45),Kläppen Arena · airbag,camp,,coaches,For the coaches who are up early.,
@@ -149,10 +149,10 @@ Fri,19:00,21:00,,Coaches' meeting + dinner,Place set in the coaches' chat,camp,,
 Fri,21:00,23:00,,Kläppen Video Awards,Kläppen,klappen,yes,coaches,Coaches go together after dinner.,
 Sat,08:30,09:00,,Gathering + group photo,"Arena area — below the arena, by the parking",camp,,everyone,,
 Sat,09:00,09:30,,Joint warm-up,Arena area,camp,,everyone,,
-Sat,10:00,11:00,09:30,Höstpark — Svart group,Höstpark · meet at the bottom of the Höstpark lift,camp,,group:Svart,Lifts open at 10:00. Malung youth trainers split the group into packs of 3–4 that ride together and drop in staggered.,
-Sat,10:00,11:00,09:30,Höstpark — Röd+ group,Höstpark · meet at the bottom of the Höstpark lift,camp,,group:Röd+,Lifts open at 10:00. Malung youth trainers split the group into packs of 3–4 that ride together and drop in staggered.,
-Sat,10:00,11:00,09:30,Höstpark — Röd/Blå group,Höstpark · meet at the bottom of the Höstpark lift,camp,,group:Röd/Blå,Lifts open at 10:00. Malung youth trainers split the group into packs of 3–4 that ride together and drop in staggered.,
-Sat,10:00,11:00,09:30,Höstpark — Röd group,Höstpark · meet at the bottom of the Höstpark lift,camp,,group:Röd,Lifts open at 10:00. Malung youth trainers split the group into packs of 3–4 that ride together and drop in staggered.,
+Sat,10:00,11:00,09:30,Höstpark — Albert's group,Höstpark · meet at the bottom of the Höstpark lift,camp,,group:Albert,Lifts open at 10:00. Malung youth trainers split the group into packs of 3–4 that ride together and drop in staggered.,
+Sat,10:00,11:00,09:30,Höstpark — Jason's group,Höstpark · meet at the bottom of the Höstpark lift,camp,,group:Jason,Lifts open at 10:00. Malung youth trainers split the group into packs of 3–4 that ride together and drop in staggered.,
+Sat,10:00,11:00,09:30,Höstpark — John's group,Höstpark · meet at the bottom of the Höstpark lift,camp,,group:John,Lifts open at 10:00. Malung youth trainers split the group into packs of 3–4 that ride together and drop in staggered.,
+Sat,10:00,11:00,09:30,Höstpark — Daniel's group,Höstpark · meet at the bottom of the Höstpark lift,camp,,group:Daniel,Lifts open at 10:00. Malung youth trainers split the group into packs of 3–4 that ride together and drop in staggered.,
 Sat,10:00,11:00,09:30,Höstpark — Snowboard group,Höstpark · meet at the bottom of the Höstpark lift,camp,,group:Snowboard,Lifts open at 10:00.,
 Sat,10:00,13:30,,Park opening — ride with your pack,Meet at the bottom of the Höstpark lift,camp,,youth-sat,"You'll get a pack of 3–4 kids inside one coach's group, assigned when we meet. Help them feel at home in the park and build confidence.",After 13:30 you're free — ride the rail jam and inspire them.
 Sat,11:30,12:30,,Lunch,Bring your own · Restaurang Halster is open for lunch,common,,"everyone, youth-sat",Parents help make sure every rider eats.,Lunch is on the club — join us.
@@ -245,7 +245,7 @@ function includes(s, p){
 }
 function forLine(s){
   const t=tokens(s), g=t.find(x=>x.toLowerCase().startsWith("group:"));
-  if (g) return `${g.slice(6).trim()} group`;
+  if (g){ const n=g.slice(6).trim(); return /snowboard/i.test(n) ? "Snowboard group" : `${n}'s group`; }
   const ks=t.map(x=>x.toLowerCase()); const parts=[];
   if (ks.includes("everyone")) parts.push("Everyone"); else { if (ks.includes("riders")) parts.push("All riders"); if (ks.includes("coaches")) parts.push("Coaches"); }
   if (ks.some(k=>k.startsWith("youth"))) parts.push("Malung youth trainers");
@@ -296,11 +296,11 @@ function renderPicker(){
 function showPerson(p){
   $("#picker").hidden=true;
   let meta="";
-  if (p.role==="rider"){ const g=GROUPS[p.group]; meta=`Level: <b class="${lvClass(p.lvl)}">${esc(p.lvl)} ${LV[p.lvl]||""}</b> (${esc(p.disc)})<br>Group: ${esc(p.group)}${g&&g.coaches.length?` · Coach${g.coaches.length>1?"es":""}: ${esc(g.coaches.map(c=>c.name).join(", "))}`:""}`; }
-  else if (p.role==="coach"){ const g=GROUPS[p.group]; meta=`Coach · ${esc(p.group)} group${g?` (${g.riders.length} riders)`:""}`; }
+  if (p.role==="rider"){ const g=GROUPS[p.group]; meta=`Level: <b class="${lvClass(p.lvl)}">${esc(p.lvl)} ${LV[p.lvl]||""}</b> (${esc(p.disc)})${g&&g.coaches.length?`<br>Coach${g.coaches.length>1?"es":""}: ${esc(g.coaches.map(c=>c.name).join(", "))}`:""}`; }
+  else if (p.role==="coach"){ const g=GROUPS[p.group]; meta=`Coach${g?` · ${g.riders.length} riders`:""}`; }
   else { meta = `Malung youth trainer · ${p.daysSet ? [p.sat&&"Saturday 10:00–13:30", p.sun&&"Sunday 13:00–15:00"].filter(Boolean).join(" and ") : "Saturday 10:00–13:30 and/or Sunday 13:00–15:00 — whichever you picked in the poll"}`; }
   const mine=SESSIONS.filter(s=>includes(s,p));
-  const roster = p.role==="coach" && GROUPS[p.group] ? `<div class="note">Your group: ${GROUPS[p.group].riders.map(r=>esc(r.name)).join(", ")}</div>` : "";
+  const roster = p.role==="coach" && GROUPS[p.group] ? `<div class="note">Your riders: ${GROUPS[p.group].riders.map(r=>`${esc(r.name)} ${LV[r.lvl]||""}`).join(", ")}</div>` : "";
   $("#person").innerHTML=`<button class="back" id="back">← All names</button><div class="who"><h2>${esc(p.name)}</h2><div class="meta">${meta}</div></div>${roster}${days(mine,p)}`;
   $("#back").onclick=()=>{ if(history.state&&history.state.p) history.back(); else go(""); };
 }
